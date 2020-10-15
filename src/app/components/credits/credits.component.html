@@ -1,0 +1,33 @@
+<div id="cast-crew" [ngStyle]="{'background': 'url(' + bgImage + ') center center / cover no-repeat '}"> 
+    <div id="cast">
+        <div class="image-background"></div>
+        <div class="content">
+            <div class="bg-cast">
+                <div *ngFor="let cast of castList" class="cast-card">
+                    <img src="https://image.tmdb.org/t/p/w300/{{ cast.profile_path }}" alt="{{ cast.name}}">
+                    <p class=""> {{ cast.character}} </p>
+                    <p class="gray"> {{ cast.name}} </p>
+                </div>
+            </div>
+            <div class="bg-crew">
+                <div>
+                    <h4> Director: </h4> 
+                    <p *ngIf="director" class="gray"> <span *ngFor="let d of director"> {{ d.name }} </span> </p>
+                    <p *ngIf="!director"> Not Available </p>
+                </div>
+                <div>
+                    <h4> Screenplay: </h4> 
+                    <p *ngIf="screenplay" class="gray"><span *ngFor="let s of screenplay"> {{ s.name }}, </span> </p>
+                    <p *ngIf="!screenplay"> Not Available </p>
+                </div>
+
+                <div class="div-bottom">
+                    <nav *ngIf="movie">
+                        <a [routerLink]="['/movie', movie.id, 'detail']">Details</a> |
+                        <a [routerLink]="['/movie', movie.id, 'credits']">Credits</a>
+                      </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

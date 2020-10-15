@@ -1,0 +1,9 @@
+<div id="header">
+    <div id="searchBox">
+        <input placeholder="Search a movie" type="text" (keyup.enter)="searchMovies($event.target.value)">
+    </div>
+    <nav>
+        <a [routerLink]="['/popular']">Popular Movies</a> |
+        <a [routerLink]="['/upcoming']">Upcoming Movies</a>
+    </nav>
+</div>

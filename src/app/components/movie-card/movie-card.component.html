@@ -1,0 +1,9 @@
+<a *ngIf="model" [routerLink]="['/movie', model.id, 'detail']">
+    <img *ngIf="model.poster_path" src="https://image.tmdb.org/t/p/w300/{{model.poster_path}}" [alt]="model.title ? model.title : model.name">
+    <img *ngIf="!model.poster_path"  src="http://www.catedrauamfujitsu.es/wp-content/themes/invicta/styles/images/defaults/no_photo.jpg" [alt]="model.title ? model.title : model.name">
+    <div class="vote-average"> 
+        <span class="star">&#9733;</span> 
+        {{ model.vote_average }} 
+    </div>
+    <div class=""> </div>
+</a>

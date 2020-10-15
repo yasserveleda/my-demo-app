@@ -1,0 +1,83 @@
+$black: #000000;
+$white: #FFFFFF;
+$gray: #bbbbbb;
+$green: #212c39;
+$yellow: #FFD700;
+
+.content {
+    display: flex; 
+    flex-flow: row wrap; 
+    position: relative;
+    .movie-card {
+        position: relative;
+        display: flex;
+        border-radius: 10px 10px 0px 0px;
+        transition: transform 300ms ease 0s;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 1rem 2rem;
+        color: $white;
+        padding: 0;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .vote-average {
+            background-color: rgba(0, 0, 0, 0.808);
+            border-radius: 10%;
+            color: #FFFFFF;
+            left: 0px;
+            margin: 0.25rem;
+            padding: 0.3rem;
+            position: absolute;
+            top: 0px;
+            .star {
+                color: $yellow;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 3000px) {
+    .content {
+        padding: 2em 2.5em;
+    }
+    .movie-card {
+        flex: 0 0 calc(14.2857% - 36px);
+        margin: 24px 18px;
+    }
+}
+@media screen and (max-width: 1921px) {
+    .content {
+        padding: 2em 2.5em;
+    }
+    .movie-card {
+        flex: 0 0 calc(16.6667% - 28px);
+        margin: 22px 14px;
+    }
+}
+@media screen and (max-width: 1440px) { 
+    .content {
+        padding: 1.5em;
+    }
+    .movie-card {
+        flex: 0 0 calc(20% - 20px);
+        margin: 15px 10px;
+    }
+}
+@media screen and (max-width: 1025px) {
+    .movie-card {
+        flex: 0 0 calc(25% - 16px);
+        margin: 10px 8px;
+    }
+}
+@media screen and (max-width: 779px) { 
+    .movie-card {
+        flex: 0 0 calc(50% - 16px);
+        margin: 10px 8px;
+    }
+}
+@media screen and (max-width: 426px) { 
+    .movie-card {
+        flex: 0 0 calc(100% - 20px);
+        margin: 10px 8px;
+    }
+}

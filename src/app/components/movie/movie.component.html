@@ -1,0 +1,46 @@
+<div id="movie-detail">
+    <div class="details">
+        <div class="div-top" *ngIf="movie">
+            <h2> {{ movie.original_title }} </h2>
+            <h6> 
+                Action, Adventure, Drama, Fantasy
+            </h6>
+            <h6> 
+                <span class="">&#8734;</span> 1h 55m 
+                <span class="star">&#9733;</span>  7.3
+            </h6>
+        </div>
+
+        <div class="div-medium" *ngIf="movie">
+            <h4> Overview </h4> 
+            <p class="h9">
+                {{ movie.overview }}
+            </p>
+            <h5>
+                Revenue: <br>
+                <span *ngIf="!movie.revenue"> Not Available </span> 
+                <span *ngIf="movie.revenue"> {{ movie.revenue | currency }}  </span> 
+            </h5>
+            <h5>
+                Budget: <br>
+                <span *ngIf="!movie.budget"> Not Available </span> 
+                <span *ngIf="movie.budget"> {{ movie.budget | currency }} </span> 
+            </h5>
+            <h5>
+                Release Date: <br>
+                {{ movie.release_date }}
+            </h5>
+        </div>
+
+        <div class="div-bottom">
+            <nav *ngIf="movie">
+                <a [routerLink]="['/movie', movie.id, 'detail']">Details</a> |
+                <a [routerLink]="['/movie', movie.id, 'credits']">Credits</a>
+            </nav>
+        </div>
+        
+    </div>
+    <div class="picture" [ngStyle]="{'background': 'url(' + bgImage + ') center center / cover no-repeat '}"> </div>
+</div>
+
+

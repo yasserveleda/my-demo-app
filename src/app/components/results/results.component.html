@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+<div class="content">
+    <div *ngFor="let movie of resultsList" class="movie-card">
+        <a [routerLink]="['/movie', movie.id, 'detail']">
+            <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" [alt]="movie.title ? movie.title : movie.name">
+            <img *ngIf="!movie.poster_path"  src="{{ noImageCard }}" [alt]="movie.title ? movie.title : movie.name">
+            <div class="vote-average"> 
+                <span class="star">&#9733;</span> 
+                {{ movie.vote_average }} 
+            </div>
+            <div class=""> </div>
+        </a>
+    </div>
+</div>
